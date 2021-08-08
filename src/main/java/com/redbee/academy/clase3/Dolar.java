@@ -7,11 +7,11 @@ public class Dolar {
     /**
      * Un analista financiero lleva un registro del precio del dólar día a día,
      * y desea saber cuál fue la mayor de las alzas en el precio diario a lo largo de ese período.
-     *
+     * <p>
      * Escriba un programa que analice el histórico del dólar recibido en una lista.
-     *
+     * <p>
      * El programa debe entregar como salida cuál fue la mayor de las alzas de un día para el otro.
-     *
+     * <p>
      * Si en ningún día el precio subió, la salida debe ser: 0.
      * Dia 1: 496.96
      * Dia 2: 499.03
@@ -29,7 +29,18 @@ public class Dolar {
      * @return
      */
     public static Float resolver(List<Float> historicoDolar) {
-        //TODO: implementar
-        return null;
+
+        Float max = 0.0F;
+
+        for (int i = 0; i < historicoDolar.size() - 1; i++) {
+
+            Float deltaDiario = historicoDolar.get(i + 1) - historicoDolar.get(i);
+
+            if (deltaDiario > max) {
+                max = deltaDiario;
+            }
+        }
+
+        return max;
     }
 }
