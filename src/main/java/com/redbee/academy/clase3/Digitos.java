@@ -9,7 +9,18 @@ public class Digitos {
      * @return
      */
     public static Integer resolver(Long numero) {
-        //TODO: implementar
-        return null;
+        Long numeroAux = numero;
+        Integer result = 1;
+
+        while (numeroAux >= 10) {
+            numeroAux = numeroAux / 10;
+            result++;
+        }
+
+        return result;
+    }
+
+    public static Integer resolverConString(Long numero) {
+        return numero.toString().length();
     }
 }
